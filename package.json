@@ -6,7 +6,7 @@
     "build": "webpack --mode production",
     "lint": "eslint src/**",
     "deploy": "gh-pages -d build",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "keywords": [],
   "author": "Braian Rosas",

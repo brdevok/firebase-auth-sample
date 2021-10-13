@@ -1,9 +1,19 @@
 import React from "react";
+import ReactDOM from "react-dom"
+import { AuthProvider } from "./contexts/AuthContext";
+import { FirebaseProvider } from "./contexts/FirebaseContext";
+import Routes from "./routes/Routes";
 
 const App:React.FC = ():JSX.Element => {
 
-    return(<div>app</div>);
+    return(
+        <FirebaseProvider>
+            <AuthProvider>
+                <Routes/>
+            </AuthProvider>
+        </FirebaseProvider>
+    );
 
 }
 
-export default App;
+ReactDOM.render(<App/>, document.getElementById("root"));

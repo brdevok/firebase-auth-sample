@@ -6,17 +6,17 @@ import { auth } from "../src/types/Authentication";
 const firebase = new Firebase();
 
 const testUser:auth.UserSignUpOptions = {
-    displayName: "Test Auth User",
-    email: "test.auth.user@email.com",
-    password: "testauthuserpassword"
+    displayName: "Test User",
+    email: "test.user@email.com",
+    password: "TestUserPassword1234"
 };
 
 describe("Test the getAppAuth() method", () => {
 
     test("Must return the Auth instance of the current Firebase app instance", () => {
-        const expected = Object.getPrototypeOf(new Authentication()).constructor.getAppAuth(firebase.app);
-        const result = getAuth(firebase.app);
-        expect(expected).toBe(result);
+        const results = Object.getPrototypeOf(new Authentication()).constructor.getAppAuth(firebase.app);
+        const expected = getAuth(firebase.app);
+        expect(results).toBe(expected);
     });
 
 });

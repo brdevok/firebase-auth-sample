@@ -24,12 +24,7 @@ export namespace auth {
     /**
      * Data required to create a new user in the app
      */
-    interface UserSignUpOptions extends UserAuthCredentialsOptions {
-        /**
-         * The display name of the user, acts like an username.
-         */
-        displayName:string
-    }
+    interface UserSignUpOptions extends UserAuthCredentialsOptions {}
 
     /**
      * The authorization callbacks represents a specific event on the session

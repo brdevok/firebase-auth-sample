@@ -1,12 +1,21 @@
 import { Container } from "@mui/material";
+import { Box, minWidth } from "@mui/system";
 import React from "react";
 
-const PageContainer:React.FC<{children:React.ReactNode}> = ({children}):JSX.Element => {
+const PageContainer:React.FC<{children:React.ReactNode, bgcolor?:string}> = ({children, bgcolor}):JSX.Element => {
 
     return(
-        <Container fixed>
-            {children}
-        </Container>
+        <Box 
+            sx={{
+                bgcolor: bgcolor ? bgcolor : "",
+                minHeight: "100vh"
+            }}
+        >
+            <Container fixed
+            >
+                {children}
+            </Container>
+        </Box>
     );
 
 }

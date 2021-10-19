@@ -3,6 +3,10 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import ROUTES from "../assets/routes/ROUTES";
 import RequireAuth from "../components/auth/RequireAuth";
 import RequireNotAuth from "../components/auth/RequireNotAuth";
+import Home from "../pages/Home/Home";
+import SignIn from "../pages/SignIn/SignIn";
+import SignOut from "../pages/SignOut/SignOut";
+import SignUp from "../pages/SignUp/SignUp";
 
 const Routes:React.FC = ():JSX.Element => {
 
@@ -13,25 +17,25 @@ const Routes:React.FC = ():JSX.Element => {
 
                 <Route exact path={ROUTES["HOME"]}>
                     <RequireAuth>
-                        HOME
+                        <Home/>
                     </RequireAuth>
                 </Route>
 
                 <Route path={ROUTES["SIGN_OUT"]}>
                     <RequireAuth>
-                        SIGN OUT
+                        <SignOut/>
                     </RequireAuth>
                 </Route>
 
                 <Route path={ROUTES["SIGN_IN"]}>
                     <RequireNotAuth>
-                        SIGN IN
+                        <SignIn/>
                     </RequireNotAuth>
                 </Route>
 
                 <Route path={ROUTES["SIGN_UP"]}>
                     <RequireNotAuth>
-                        SIGN UP
+                        <SignUp/>
                     </RequireNotAuth>
                 </Route>
 

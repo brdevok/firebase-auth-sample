@@ -108,6 +108,15 @@ class Authentication {
 
     }
 
+    /**
+     * Get the current user data.
+     */
+    public static getUser(app:FirebaseApp) {
+
+        return this.getAppAuth(app).currentUser;
+
+    }
+
 } 
 
 export default Authentication;
